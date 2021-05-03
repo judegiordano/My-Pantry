@@ -4,6 +4,7 @@ export default async (fastify: FastifyInstance): Promise<void> => {
 	fastify.post("/validate", {
 		preValidation: [fastify.authentication],
 		schema: {
+			tags: ["User"],
 			response: {
 				201: {
 					type: "object",

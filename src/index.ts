@@ -19,6 +19,7 @@ export default async (fastify: FastifyInstance, opts: FastifyPluginOptions): Pro
 			dir: path.join(__dirname, "Controllers"),
 			options: Object.assign({}, opts)
 		});
+
 	} catch (error) {
 		console.log(error);
 		process.exit(1);

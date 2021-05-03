@@ -3,6 +3,7 @@ import "dotenv/config";
 export class Config {
 
 	private static readonly _APPCODE = process.env["APPCODE"];
+	private static readonly _NODE_ENV = process.env["NODE_ENV"];
 	private static readonly _APPTOKEN = process.env["APPTOKEN"];
 	private static readonly _DB_TYPE = process.env["DB_TYPE"];
 	private static readonly _DB_HOST = process.env["DB_HOST"];
@@ -15,6 +16,8 @@ export class Config {
 	private static readonly _JWT_SECRET = process.env["JWT_SECRET"];
 
 	public static readonly Options = {
+		NODE_ENV: Config._NODE_ENV,
+		IS_PROD: Config._NODE_ENV == "production" ? true : false,
 		APPCODE: Config._APPCODE,
 		APPTOKEN: Config._APPTOKEN,
 		DB_TYPE: Config._DB_TYPE,

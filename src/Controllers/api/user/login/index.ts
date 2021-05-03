@@ -8,6 +8,7 @@ import { ILogin, User } from "../../../../Repositories/UserRepository";
 export default async (fastify: FastifyInstance): Promise<void> => {
 	fastify.post("/", {
 		schema: {
+			tags: ["User"],
 			body: {
 				type: "object",
 				properties: {
