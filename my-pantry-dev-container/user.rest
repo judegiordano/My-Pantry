@@ -1,0 +1,32 @@
+###
+GET http://127.0.0.1:5000/api/ HTTP/1.1
+appcode: somesecret
+apptoken: somesecret2
+
+###
+POST http://127.0.0.1:5000/api/user/validate HTTP/1.1
+appcode: somesecret
+apptoken: somesecret2
+authorization: Bearer token
+
+###
+POST http://127.0.0.1:5000/api/user/login HTTP/1.1
+Content-Type: application/json
+appcode: somesecret
+apptoken: somesecret2
+
+{
+	"email": "a@a.com",
+	"password": "password"
+}
+
+###
+POST http://127.0.0.1:5000/api/user/register HTTP/1.1
+Content-Type: application/json
+appcode: somesecret
+apptoken: somesecret2
+
+{
+	"email": "a@a.com",
+	"password": "password"
+}

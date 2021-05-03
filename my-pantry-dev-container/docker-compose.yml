@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  my-pantry-container:
+    container_name: my-pantry-container
+    image: postgres
+    restart: unless-stopped
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    env_file:
+        - database.env
+    ports:
+      - "1234:5432"
+    networks:
+      - my-pantry-network
+networks:
+    my-pantry-network:
+      driver: bridge
